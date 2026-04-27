@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinira: Jornada Universitaria</title>
+    <link rel="stylesheet" href="styles.css?v=13" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="screen screen-login active" id="loginScreen" aria-label="Login">
+        <div class="iso-scene iso-lobby" aria-hidden="true">
+          <span class="iso-floor"></span>
+          <span class="iso-wall iso-wall-left"></span>
+          <span class="iso-wall iso-wall-right"></span>
+          <span class="iso-object iso-desk a"></span>
+          <span class="iso-object iso-desk b"></span>
+          <span class="iso-object iso-board"></span>
+          <span class="iso-object iso-plant a"></span>
+          <span class="iso-object iso-books"></span>
+          <span class="iso-object iso-terminal"></span>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button text-icon" id="openSettingsFromLogin" type="button" title="Configuracoes">Menu</button>
+        </div>
+        <div class="login-panel">
+          <p class="eyebrow">Jogo educativo</p>
+          <h1>Cinira: Jornada Universitaria</h1>
+          <p class="intro">
+            Entre no campus, escolha seu personagem e complete desafios para liberar novas regioes.
+          </p>
+          <form id="loginForm" class="login-form">
+            <label>
+              Nome do jogador
+              <input id="playerName" name="playerName" type="text" placeholder="Digite seu nome" maxlength="24" required />
+            </label>
+            <label>
+              Turma ou curso
+              <input id="playerClass" name="playerClass" type="text" placeholder="Ex.: ADS, Enfermagem, Pedagogia" maxlength="32" />
+            </label>
+            <button class="primary-button" type="submit">Entrar no campus</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="screen screen-settings" id="settingsScreen" aria-label="Definicoes">
+        <div class="iso-scene iso-study" aria-hidden="true">
+          <span class="iso-floor"></span>
+          <span class="iso-wall iso-wall-left"></span>
+          <span class="iso-wall iso-wall-right"></span>
+          <span class="iso-object iso-board"></span>
+          <span class="iso-object iso-shelf a"></span>
+          <span class="iso-object iso-shelf b"></span>
+          <span class="iso-object iso-table"></span>
+          <span class="iso-object iso-plant b"></span>
+        </div>
+        <header class="screen-header">
+          <button class="back-button" data-go="loginScreen" type="button">Voltar</button>
+          <div>
+            <p class="eyebrow">Pagina do site</p>
+            <h2>Definicoes</h2>
+          </div>
+        </header>
+        <div class="settings-grid">
+          <article class="wide-card">
+            <h3>Sobre o Projeto</h3>
+            <p>
+              Cinira: Jornada Universitaria e um prototipo de jogo educativo criado para apresentar uma experiencia
+              de aprendizagem baseada em exploracao, progresso e desafios curtos. O jogador percorre areas da
+              universidade, resolve atividades e desbloqueia novas regioes conforme avanca.
+            </p>
+          </article>
+          <article>
+            <h3>Objetivo</h3>
+            <p>
+              Incentivar o aluno a conhecer melhor a rotina universitaria, praticar organizacao, interpretar
+              informacoes e completar missoes ligadas ao ambiente academico.
+            </p>
+          </article>
+          <article>
+            <h3>Mecanica</h3>
+            <p>
+              Cada regiao possui 4 niveis. Ao concluir os quatro desafios de uma regiao, a proxima parte do campus
+              fica disponivel no mapa.
+            </p>
+          </article>
+          <article>
+            <h3>Publico-alvo</h3>
+            <p>
+              Estudantes em fase inicial de adaptacao ao ambiente universitario ou alunos interessados em uma
+              atividade educativa gamificada.
+            </p>
+          </article>
+          <article>
+            <h3>Justificativa</h3>
+            <p>
+              A gamificacao ajuda a transformar conteudos simples em uma experiencia mais participativa, com metas,
+              feedback imediato e sensacao de progresso.
+            </p>
+          </article>
+          <article>
+            <h3>Progresso</h3>
+            <p id="progressSummary">Nenhum progresso salvo ainda.</p>
+            <button class="secondary-button danger" id="resetProgress" type="button">Reiniciar progresso</button>
+          </article>
+          <article>
+            <h3>Modo</h3>
+            <label class="toggle-line">
+              <input id="soundToggle" type="checkbox" checked />
+              Sons e efeitos visuais
+            </label>
+            <label class="toggle-line">
+              <input id="tipsToggle" type="checkbox" checked />
+              Mostrar dicas nos desafios
+            </label>
+          </article>
+          <article>
+            <h3>Materiais</h3>
+            <p>O projeto usa as imagens e PDFs que voce colocou na pasta.</p>
+            <a class="secondary-button link-button" href="trabalho%20faculdade.pdf" target="_blank">Abrir PDF do trabalho</a>
+            <a class="secondary-button link-button" href="PERSONAGEM%20PNG.pdf" target="_blank">Abrir PDF dos personagens</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="screen screen-characters" id="charactersScreen" aria-label="Selecao de personagens">
+        <div class="iso-scene iso-classroom" aria-hidden="true">
+          <span class="iso-floor"></span>
+          <span class="iso-wall iso-wall-left"></span>
+          <span class="iso-wall iso-wall-right"></span>
+          <span class="iso-object iso-desk a"></span>
+          <span class="iso-object iso-desk b"></span>
+          <span class="iso-object iso-desk c"></span>
+          <span class="iso-object iso-board"></span>
+          <span class="iso-object iso-books"></span>
+          <span class="iso-object iso-plant a"></span>
+        </div>
+        <header class="screen-header">
+          <button class="back-button" data-go="loginScreen" type="button">Voltar</button>
+          <div>
+            <p class="eyebrow">Equipe sua jornada</p>
+            <h2>Selecione seu personagem</h2>
+          </div>
+        </header>
+        <div class="character-select-shell">
+          <div class="character-thumbs" id="characterThumbs" aria-label="Lista de personagens"></div>
+          <div class="character-preview" id="characterPreview" aria-live="polite"></div>
+          <aside class="character-info-panel">
+            <p class="eyebrow">Personagem ativo</p>
+            <h3 id="selectedCharacterName">Cinira</h3>
+            <p id="selectedCharacterRole">Curiosa</p>
+            <p id="selectedCharacterPower">Recebe dicas extras nos desafios.</p>
+            <button class="primary-button wide" id="confirmCharacter" type="button">Comecar aventura</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="screen screen-map" id="mapScreen" aria-label="Mapa de regioes">
+        <header class="hud">
+          <div>
+            <p class="eyebrow" id="welcomeText">Bem-vindo</p>
+            <h2>Mapa do campus</h2>
+          </div>
+          <div class="hud-actions">
+            <button class="icon-button text-icon" id="openSettingsFromMap" type="button" title="Configuracoes">Menu</button>
+            <button class="secondary-button" id="changeCharacter" type="button">Personagem</button>
+          </div>
+        </header>
+        <div class="region-track" id="regionTrack"></div>
+      </section>
+
+      <section class="screen screen-level" id="levelScreen" aria-label="Nivel">
+        <header class="screen-header compact">
+          <button class="back-button" data-go="mapScreen" type="button">Mapa</button>
+          <div>
+            <p class="eyebrow" id="levelRegion">Regiao</p>
+            <h2 id="levelTitle">Nivel</h2>
+          </div>
+        </header>
+        <div class="level-stage">
+          <div class="challenge-card">
+            <p class="challenge-count" id="challengeCount">Desafio 1 de 4</p>
+            <h3 id="challengeQuestion">Pergunta</h3>
+            <p id="challengeTip" class="tip"></p>
+            <div class="answer-grid" id="answerGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen screen-finish" id="finishScreen" aria-label="Aprovada">
+        <div class="finish-panel">
+          <p class="eyebrow">Missao cumprida</p>
+          <h2 id="finishTitle">Regiao concluida</h2>
+          <p id="finishText">Voce desbloqueou uma nova area do campus.</p>
+          <button class="primary-button" data-go="mapScreen" type="button">Voltar ao mapa</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js?v=13"></script>
+  </body>
+</html>
